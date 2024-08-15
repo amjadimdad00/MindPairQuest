@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Dancing Script", cursive;
+  background-image: url("./images/Background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #9ccbfa;
+  padding: 20px 30px;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.reset {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn {
+  background: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 50px;
+  padding: 5px 20px;
+  font-weight: 900;
+  font-family: "Dancing Script", cursive;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+.btn:focus {
+  background: #fff;
+  color: #000;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.game {
+  margin: 2em 0px;
+  width: 430px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+.item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  background-color: #fff;
+  transform: rotateY(180deg);
+  transition: 0.25s;
+}
+
+.item.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #36caca;
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+
+.boxOpen::after,
+.boxMatch::after {
+  transform: rotateY(180deg);
+}
